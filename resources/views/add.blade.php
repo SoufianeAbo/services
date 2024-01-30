@@ -36,9 +36,10 @@
             <input name = "email" class = "border border-gray-500 rounded p-2" placeholder="Your e-mail..." type="text">
 
             <label for="service" class = "mt-4">Select category</label>
-            <select name="categoryId">
+            <select name="categoryId" class = "py-2 px-2 border border-gray-500 rounded">
                 <option value="0" selected disabled>Choose a category</option>
                 @foreach ($categories as $category)
+                    <option value="{{$category->id}}">{{$category->category}}</option>
                 @endforeach
             </select>
         </form>

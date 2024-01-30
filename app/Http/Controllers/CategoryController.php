@@ -7,11 +7,8 @@ use Illuminate\Support\Facades\DB;
 
 class CategoryController extends Controller
 {
-    public function getAllServices() {
-        $services = DB::table('services')
-        ->join('categories', 'services.categoryId', '=', 'categories.id')
-        ->select('services.*', 'categories.category as category_name')
-        ->get();
-        return view('user', compact('services'));
+    public function getAllCategories() {
+        $categories = DB::table('categories')->get();
+        return view('add', compact('categories'));
     }
 }

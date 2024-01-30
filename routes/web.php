@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\ServiceController;
 use Illuminate\Support\Facades\Route;
@@ -20,6 +21,4 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', [ServiceController::class,'getAllServices'])->name('home.index');   
-Route::get('/add', function () {
-    return view('add');
-})->name('add-page');
+Route::get('/add', [CategoryController::class,'getAllCategories'])->name('add-page');
