@@ -21,8 +21,8 @@
 
         @foreach ($services as $service)
             <div class="w-full block rounded-2xl bg-white shadow-lg dark:bg-neutral-700 text-center">
-                <div class="pt-6 px-6">
-                    <div class = "flex flex-row gap-16 justify-around">
+                <div>
+                    <div class = "flex flex-row gap-16 justify-around bg-sky-500 py-4 px-4 rounded">
                         <h5 class="mb-2 text-xl font-bold tracking-wide text-neutral-800 dark:text-neutral-50">
                             {{$service->service}}
                         </h5>
@@ -31,16 +31,19 @@
                             {{$service->categoryPull->category}}
                         </h5>
                     </div>
-                    <p class="mb-2 text-base text-neutral-500 dark:text-neutral-300">
+                    <p class="mb-2 text-base text-neutral-500 dark:text-neutral-300 pt-4">
                         {{$service->description}}
                     </p>
-                    <a href="#"
+                    <!-- <a href="#"
                         class="mt-3 inline-block rounded bg-blue-500 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-blue-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-blue-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-blue-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]">
                         Book now
-                    </a>
+                    </a> -->
                 </div>
-                <p class = "py-2 text-white text-sm">Created by {{$service->firstName}} {{$service->lastName}}</p>
-                <p class = "py-2 text-white text-sm">{{$service->email}}</p>
+                <div class = "flex flex-row justify-between px-4">
+                    <p class = "py-2 text-white text-sm">Created by {{$service->firstName}} {{$service->lastName}}</p>
+                    <p class = "py-2 text-white text-sm">{{$service->email}}</p>
+                    <p class = "py-2 text-sky-500 font-bold text-md">${{$service->cost}}</p>
+                </div>
             </div>
 
         @endforeach

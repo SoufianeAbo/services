@@ -20,6 +20,7 @@ class ServiceController extends Controller
         $lastName = $request->input('lastName');
         $email = $request->input('email');
         $categoryId = $request->input('categoryId');
+        $cost = $request->input('cost');
 
         Service::create([
             'service' => $serviceName,
@@ -27,7 +28,8 @@ class ServiceController extends Controller
             'firstName' => $firstName,
             'lastName' => $lastName,
             'email' => $email,
-            'categoryId' => $categoryId
+            'categoryId' => $categoryId,
+            'cost' => $cost
         ]);
 
         return redirect()->route('home.index');

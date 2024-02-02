@@ -44,6 +44,9 @@
                 @endforeach
             </select>
 
+            <label for="service" class = "mt-4">Cost in $</label>
+            <input name = "cost" class = "border border-gray-500 rounded p-2" placeholder="$" type="text">
+
             <button class = "mt-4 py-2 bg-green-500 w-fit rounded px-4" type = "submit">Submit</button>
         </form>
     </div>
