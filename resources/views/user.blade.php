@@ -28,7 +28,7 @@
                         </h5>
 
                         <h5 class="mb-2 text-xl font-bold tracking-wide text-neutral-800 dark:text-neutral-50">
-                            {{$service->category_name}}
+                            {{$service->categoryPull->category}}
                         </h5>
                     </div>
                     <p class="mb-2 text-base text-neutral-500 dark:text-neutral-300">
@@ -40,6 +40,7 @@
                     </a>
                 </div>
                 <p class = "py-2 text-white text-sm">Created by {{$service->firstName}} {{$service->lastName}}</p>
+                <p class = "py-2 text-white text-sm">{{$service->email}}</p>
             </div>
 
         @endforeach

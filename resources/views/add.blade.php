@@ -13,7 +13,8 @@
     </div>
     
     <div class = "flex justify-center items-center">
-        <form class = "flex flex-col" action="">
+        <form class = "flex flex-col" method = "POST" action="{{route('add.submit')}}">
+            @csrf
             <label for="service">Service name</label>
             <input name = "service" class = "border border-gray-500 rounded p-2" placeholder="Your service name..." type="text">
 
@@ -23,7 +24,7 @@
             <div class = "flex flex-row gap-8">
                 <div class = "flex flex-col">
                     <label for="firstName" class = "mt-4">First name</label>
-                    <input name = "service" class = "border border-gray-500 rounded p-2" placeholder="Your first name..." type="text">
+                    <input name = "firstName" class = "border border-gray-500 rounded p-2" placeholder="Your first name..." type="text">
                 </div>
 
                 <div class = "flex flex-col">
@@ -42,6 +43,8 @@
                     <option value="{{$category->id}}">{{$category->category}}</option>
                 @endforeach
             </select>
+
+            <button class = "mt-4 py-2 bg-green-500 w-fit rounded px-4" type = "submit">Submit</button>
         </form>
     </div>
 </body>

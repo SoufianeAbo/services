@@ -22,3 +22,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [ServiceController::class,'getAllServices'])->name('home.index');   
 Route::get('/add', [CategoryController::class,'getAllCategories'])->name('add-page');
+
+Route::post('/', [ServiceController::class,'insertService'])->name('add.submit');
